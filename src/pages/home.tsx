@@ -3,11 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 // Using placeholder images since original assets are in Replit environment
 const heroCover = "/opengraph.jpg";
-const principiaImage = "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop";
-const isdinImage = "https://images.unsplash.com/photo-1570194065650-d99fb4b38b15?w=400&h=400&fit=crop";
-const bioreImage = "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop";
-const lorealImage = "https://images.unsplash.com/photo-1617897903246-719242758050?w=400&h=400&fit=crop";
-const ollieImage = "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop";
+const principiaImage = "/images/Protetor Solar Principia FPS60.png";
+const isdinImage = "/images/Isdin Fusion Water FPS60.png";
+const bioreImage = "/images/Bioré UV Perfect Milk FPS50.png";
+const lorealImage = "/images/L'Oréal Expertise com cor FPS60.png";
+const ollieImage = "/images/Protetor Solar Bastão Ollie FPS95.png";
 
 const products = [
   {
@@ -67,7 +67,7 @@ const products = [
     name: "Protetor Solar Bastão Ollie FPS95",
     description: "Formato em stick muito viral, fácil de aplicar e carregar.",
     price: "R$ 138,97",
-    badge: "Em bastão",
+    badge: "Em Bastão",
     image: ollieImage,
     whyLove: "Não suja a mão, facilita a reaplicação e virou tendência pela praticidade total.",
     color: "bg-[#FFF7E5]",
@@ -186,21 +186,12 @@ export default function Home() {
         </div>
         
         <div className="relative z-10 container mx-auto px-4 pt-32 pb-24 md:pt-48 md:pb-32 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <Badge variant="secondary" className="mb-6 px-4 py-1 text-sm font-medium tracking-wide uppercase bg-secondary text-secondary-foreground border-none">
-              Editorial Beauty
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-8 text-balance">
+            <h1 style={{ fontSize: 'clamp(2.25rem, 5vw, 4.5rem)', fontFamily: 'sans-serif', fontWeight: '700', lineHeight: '1.1', marginBottom: '2rem', color: 'black' }}>
               Os 5 Melhores Protetores do Momento
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               O sol brasileiro não perdoa. Para manter a pele saudável, jovem e radiante, fomos em busca das fórmulas mais avançadas, elegantes e eficazes do mercado.
             </p>
-          </motion.div>
         </div>
       </section>
 
@@ -241,6 +232,11 @@ export default function Home() {
                         </Badge>
                         <span className="text-5xl font-serif font-black opacity-10 leading-none">0{index + 1}</span>
                       </div>
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-auto object-contain rounded-lg mb-4"
+                      />
                       <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-tight mb-3 text-balance">
                         {product.name}
                       </h2>
