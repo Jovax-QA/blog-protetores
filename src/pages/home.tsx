@@ -17,7 +17,7 @@ const products = [
     price: "R$ 43,35",
     badge: "Muito barato",
     image: principiaImage,
-    whyLove: "Alta proteção com preço amigo, perfeito para entrar na rotina sem pesar no bolso.",
+    whyLove: "✔ Alta proteção (FPS 60)\n✔ Ideal para uso diário",
     color: "bg-[#FFF0E5]",
     shopee: { url: "https://s.shopee.com.br/AADPeFV2oz?share_channel_code=1", price: "R$ 48,59" },
     amazon: { url: "https://amzn.to/4evX0bt", price: "R$ 43,35" },
@@ -27,10 +27,10 @@ const products = [
     id: 2,
     name: "Isdin Fusion Water FPS60",
     description: "Melhor premium para pele oleosa, com acabamento perfeito e toque seco.",
-    price: "R$ 94,91",
+    price: "R$ 79,99",
     badge: "Melhor premium",
     image: isdinImage,
-    whyLove: "Muito usado por dermatologistas, tem absorção rápida e não deixa a pele oleosa.",
+    whyLove: "✔ Não deixa a pele oleosa\n✔ Absorção rápida\n✔ Alta qualidade",
     color: "bg-[#E6F4F1]",
     shopee: { url: "https://s.shopee.com.br/7VCeYpie3S", price: "R$ 79,99" },
     amazon: { url: "https://amzn.to/48bVqrt", price: "R$ 90,15" },
@@ -40,10 +40,10 @@ const products = [
     id: 3,
     name: "Bioré UV Perfect Milk FPS50",
     description: "Leve, seco e muito popular entre quem quer pele bonita no calor.",
-    price: "R$ 89,90",
+    price: "R$ 72,00",
     badge: "Melhor custo-benefício",
     image: bioreImage,
-    whyLove: "Toque seco, muito leve e ótimo para quem quer proteção sem brilho excessivo.",
+    whyLove: "✔ Toque seco\n✔ Muito leve\n✔ Ótimo para calor",
     color: "bg-[#F3E8FF]",
     shopee: { url: "https://amzn.to/4mIt3qX", price: "R$ 89,90" },
     amazon: { url: "https://amzn.to/4mIt3qX", price: "R$ 89,90" },
@@ -53,10 +53,10 @@ const products = [
     id: 4,
     name: "L'Oréal Expertise com cor FPS60",
     description: "Com base, protege e já uniformiza a pele como maquiagem.",
-    price: "R$ 44,67",
+    price: "R$ 37,90",
     badge: "Com base",
     image: lorealImage,
-    whyLove: "Disfarça manchas, substitui maquiagem e segue entre os mais vendidos.",
+    whyLove: "✔ Disfarça manchas\n✔ Substitui maquiagem\n✔ Muito vendido",
     color: "bg-[#E8F1FF]",
     shopee: { url: "https://s.shopee.com.br/5L8A0T7h9K?share_channel_code=1", price: "R$ 55,00" },
     amazon: { url: "https://amzn.to/42lSKEd", price: "R$ 37,90" },
@@ -66,10 +66,10 @@ const products = [
     id: 5,
     name: "Protetor Solar Bastão Ollie FPS95",
     description: "Formato em stick muito viral, fácil de aplicar e carregar.",
-    price: "R$ 138,97",
+    price: "R$ 132,05",
     badge: "Em Bastão",
     image: ollieImage,
-    whyLove: "Não suja a mão, facilita a reaplicação e virou tendência pela praticidade total.",
+    whyLove: "✔ Não suja a mão\n✔ Fácil de reaplicar\n✔ Muito prático no dia a dia",
     color: "bg-[#FFF7E5]",
     shopee: { url: "https://s.shopee.com.br/8pi2BgWB4T?share_channel_code=1", price: "R$ 139,00" },
     amazon: { url: "https://amzn.to/4cYsjul", price: "R$ 138,97" },
@@ -175,24 +175,16 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden bg-muted">
+      <section className="relative w-full bg-muted h-[600px] md:h-[700px]">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroCover} 
             alt="Achadinhos da Samanta e do Jovani" 
-            className="w-full h-full object-cover opacity-75"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 pt-32 pb-24 md:pt-48 md:pb-32 max-w-4xl text-center">
-            <h1 style={{ fontSize: 'clamp(2.25rem, 5vw, 4.5rem)', fontFamily: 'sans-serif', fontWeight: '700', lineHeight: '1.1', marginBottom: '2rem', color: 'black' }}>
-              Os 5 Melhores Protetores do Momento
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              O sol brasileiro não perdoa. Para manter a pele saudável, jovem e radiante, fomos em busca das fórmulas mais avançadas, elegantes e eficazes do mercado.
-            </p>
-        </div>
+        <div className="relative z-10 container mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24" />
       </section>
 
       {/* Editorial Intro */}
@@ -255,7 +247,7 @@ export default function Home() {
                           data-testid={`link-shopee-${product.id}`}
                         >
                           <span>Shopee</span>
-                          <span className="text-white/90 font-bold">{product.shopee.price}</span>
+                          <span className="text-white/90 text-xs">Clique para visualizar</span>
                         </a>
                         <a
                           href={product.ml.url}
@@ -265,7 +257,7 @@ export default function Home() {
                           data-testid={`link-ml-${product.id}`}
                         >
                           <span>Mercado Livre</span>
-                          <span className="font-bold">{product.ml.price}</span>
+                          <span className="text-xs">Clique para visualizar</span>
                         </a>
                         <a
                           href={product.amazon.url}
@@ -275,7 +267,7 @@ export default function Home() {
                           data-testid={`link-amazon-${product.id}`}
                         >
                           <span>Amazon</span>
-                          <span className="text-white/90 font-bold">{product.amazon.price}</span>
+                          <span className="text-white/90 text-xs">Clique para visualizar</span>
                         </a>
                       </div>
                     </div>
