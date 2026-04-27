@@ -176,11 +176,11 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative w-full bg-muted h-[600px] md:h-[700px]">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50">
           <img 
             src={heroCover} 
             alt="Achadinhos da Samanta e do Jovani" 
-            className="w-full h-full object-cover"
+            className="max-w-full max-h-full object-contain"
           />
         </div>
         
