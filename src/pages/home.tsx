@@ -32,9 +32,9 @@ const products = [
     image: isdinImage,
     whyLove: "✔ Não deixa a pele oleosa\n✔ Absorção rápida\n✔ Alta qualidade",
     color: "bg-[#E6F4F1]",
-    shopee: { url: "https://s.shopee.com.br/7VCeYpie3S", price: "R$ 79,99" },
+    shopee: { url: "https://s.shopee.com.br/1Vvc2c0OEa?share_channel_code=1", price: "R$ 79,99" },
     amazon: { url: "https://amzn.to/48bVqrt", price: "R$ 90,15" },
-    ml: { url: "https://meli.la/19raKJx", price: "R$ 116,90" }
+    ml: { url: "https://meli.la/2rZyk8Y", price: "R$ 116,90" }
   },
   {
     id: 3,
@@ -45,8 +45,7 @@ const products = [
     image: bioreImage,
     whyLove: "✔ Toque seco\n✔ Muito leve\n✔ Ótimo para calor",
     color: "bg-[#F3E8FF]",
-    shopee: { url: "https://amzn.to/4mIt3qX", price: "R$ 89,90" },
-    amazon: { url: "https://amzn.to/4mIt3qX", price: "R$ 89,90" },
+    shopee: { url: "https://s.shopee.com.br/6fdiE6IPYE?share_channel_code=1", price: "R$ 72,00" },
     ml: { url: "https://meli.la/1EpoTwK", price: "R$ 72,00" }
   },
   {
@@ -239,16 +238,18 @@ export default function Home() {
                         {product.whyLove}
                       </div>
                       <div className="space-y-2">
-                        <a
-                          href={product.shopee.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#EE4D2D] text-white text-sm font-semibold hover:bg-[#d93d1f] transition-colors duration-200"
-                          data-testid={`link-shopee-${product.id}`}
-                        >
-                          <span>Shopee</span>
-                          <span className="text-white/90 text-xs">Clique para visualizar</span>
-                        </a>
+                        {product.shopee && (
+                          <a
+                            href={product.shopee.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#EE4D2D] text-white text-sm font-semibold hover:bg-[#d93d1f] transition-colors duration-200"
+                            data-testid={`link-shopee-${product.id}`}
+                          >
+                            <span>Shopee</span>
+                            <span className="text-white/90 text-xs">Clique para visualizar</span>
+                          </a>
+                        )}
                         <a
                           href={product.ml.url}
                           target="_blank"
@@ -259,16 +260,18 @@ export default function Home() {
                           <span>Mercado Livre</span>
                           <span className="text-xs">Clique para visualizar</span>
                         </a>
-                        <a
-                          href={product.amazon.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#000000] text-white text-sm font-semibold hover:bg-[#1a1a1a] transition-colors duration-200"
-                          data-testid={`link-amazon-${product.id}`}
-                        >
-                          <span>Amazon</span>
-                          <span className="text-white/90 text-xs">Clique para visualizar</span>
-                        </a>
+                        {product.amazon && (
+                          <a
+                            href={product.amazon.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#000000] text-white text-sm font-semibold hover:bg-[#1a1a1a] transition-colors duration-200"
+                            data-testid={`link-amazon-${product.id}`}
+                          >
+                            <span>Amazon</span>
+                            <span className="text-white/90 text-xs">Clique para visualizar</span>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </CardContent>
