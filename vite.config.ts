@@ -23,10 +23,20 @@ export default defineConfig({
     emptyOutDir: true,
     // Configurações específicas para GitHub Pages
     assetsDir: "assets",
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
+          let extType = assetInfo.name.split('.').at(1) || '';
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            extType = 'images';
+          } else if (/woff|woff2|ttf|otf/i.test(extType)) {
+            extType = 'fonts';
+          }
+          return `assets/${extType}/[name]-[hash][extname]`;
+        },
       },
     },
   },
