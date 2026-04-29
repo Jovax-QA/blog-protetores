@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 // Using placeholder images since original assets are in Replit environment
-const heroCover = "/images/header.png";
-const principiaImage = "/blog-protetores/images/Protetor Solar Principia FPS60.png";
-const isdinImage = "/blog-protetores/images/Isdin Fusion Water FPS60.png";
-const bioreImage = "/blog-protetores/images/Bioré UV Perfect Milk FPS50.png";
-const lorealImage = "/blog-protetores/images/L'Oréal Expertise com cor FPS60.png";
-const ollieImage = "/blog-protetores/images/Protetor Solar Bastão Ollie FPS95.png";
+const heroCover = `${import.meta.env.BASE_URL}images/header.png`;
+const principiaImage = `${import.meta.env.BASE_URL}images/Protetor Solar Principia FPS60.png`;
+const isdinImage = `${import.meta.env.BASE_URL}images/Isdin Fusion Water FPS60.png`;
+const bioreImage = `${import.meta.env.BASE_URL}images/Bioré UV Perfect Milk FPS50.png`;
+const lorealImage = `${import.meta.env.BASE_URL}images/L'Oréal Expertise com cor FPS60.png`;
+const ollieImage = `${import.meta.env.BASE_URL}images/Protetor Solar Bastão Ollie FPS95.png`;
 
 const products = [
   {
@@ -86,7 +86,7 @@ const sticksProducts = [
     whyLove: "Escorrega fácil na pele, não arde os olhos e é ótimo para proteger nariz e ombros na praia.",
     color: "bg-[#FFF8E1]",
     tag: "Praia e Esporte",
-    image: "/blog-protetores/images/stick-1.png",
+    image: `${import.meta.env.BASE_URL}images/stick-1.png`,
     shopee: { url: "https://shopee.com.br/search?keyword=Banana+Boat+Sport+FPS+50+bastao", price: "R$ 27" },
     ml: { url: "https://lista.mercadolivre.com.br/Banana-Boat-Sport-FPS-50-bastao", price: "R$ 32" }
   },
@@ -99,7 +99,7 @@ const sticksProducts = [
     whyLove: "A combinação de cor com proteção FPS 95 é um achado raro. Suaviza manchas de acne e melasma, unifica a pele e protege de verdade — sem precisar de maquiagem por cima.",
     color: "bg-[#FDE8D8]",
     tag: "Rosto e Pele",
-    image: "/blog-protetores/images/stick-2.webp",
+    image: `${import.meta.env.BASE_URL}images/stick-2.webp`,
     shopee: { url: "https://shopee.com.br/Ollie-Protetor-Solar-em-Bast%C3%A3o-Com-Cor-FPS-95-i.1423440087.19598142136?extraParams=%7B%22display_model_id%22%3A199174375405%2C%22model_selection_logic%22%3A3%7D&sp_atk=71900e9b-1c45-4e65-b857-bd1f65e076be&xptdk=71900e9b-1c45-4e65-b857-bd1f65e076be", price: "R$ 132,05" },
     ml: { url: "https://www.mercadolivre.com.br/ollie-bastao-protetor-solar-facial-fps-95-cor-cor20/up/MLBU2459614614", price: "R$ 139" }
   },
