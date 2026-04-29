@@ -313,7 +313,6 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-background py-12 border-t border-border">
         <div className="container mx-auto px-4 text-center">
-          <span className="font-serif font-bold text-xl text-primary mb-4 block">Achadinhos da Samanta e do Jovani</span>
           <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6">
             Editorial independente. Os preços mencionados são médias de mercado e podem variar. Consulte sempre um dermatologista para recomendações personalizadas.
           </p>
