@@ -41,7 +41,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop'
+    if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
 
     permissions:
       pages: write
@@ -52,6 +52,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+    - name: Debug info
+      run: |
+        echo "Current ref: ${{ github.ref }}"
+        echo "Event name: ${{ github.event_name }}"
+        echo "Repository: ${{ github.repository }}"
+
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
