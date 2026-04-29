@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 // Using placeholder images since original assets are in Replit environment
-const heroCover = "/blog-protetores/opengraph.jpg";
+const heroCover = "/images/header.png";
 const principiaImage = "/blog-protetores/images/Protetor Solar Principia FPS60.png";
 const isdinImage = "/blog-protetores/images/Isdin Fusion Water FPS60.png";
 const bioreImage = "/blog-protetores/images/Bioré UV Perfect Milk FPS50.png";
@@ -169,20 +169,19 @@ export default function Home() {
       {/* Header/Nav */}
       <header className="border-b border-border bg-white/50 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-center">
-          <span className="font-serif font-bold text-xl tracking-tight text-primary">Achadinhos da Samanta e do Jovani</span>
+          <span className="font-serif font-bold text-xl tracking-tight text-primary">Mimos & Achadinhos da Sam</span>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative w-full bg-muted h-[600px] md:h-[700px]">
-        <div className="absolute inset-0 z-0 flex items-center justify-center bg-gradient-to-br from-amber-50 to-orange-50">
+      <section className="relative w-full h-[500px] md:h-[600px] bg-gradient-to-br from-[#F5E6D3] via-[#F8EDE2] to-[#FAF1E6]">
+        <div className="absolute inset-0 z-0">
           <img 
             src={heroCover} 
-            alt="Achadinhos da Samanta e do Jovani" 
-            className="max-w-full max-h-full object-contain"
+            alt="Mimos & Achadinhos da Sam" 
+            className="w-full h-full object-contain"
           />
         </div>
-        
         <div className="relative z-10 container mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24" />
       </section>
 
@@ -317,7 +316,7 @@ export default function Home() {
             Editorial independente. Os preços mencionados são médias de mercado e podem variar. Consulte sempre um dermatologista para recomendações personalizadas.
           </p>
           <div className="text-xs text-stone-400">
-            &copy; {new Date().getFullYear()} Achadinhos da Samanta e do Jovani. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Mimos & Achadinhos da Sam. Todos os direitos reservados.
           </div>
         </div>
       </footer>
