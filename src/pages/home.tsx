@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 // Using placeholder images since original assets are in Replit environment
-const heroCover = "/opengraph.jpg";
-const principiaImage = "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop";
-const isdinImage = "https://images.unsplash.com/photo-1570194065650-d99fb4b38b15?w=400&h=400&fit=crop";
-const bioreImage = "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop";
-const lorealImage = "https://images.unsplash.com/photo-1617897903246-719242758050?w=400&h=400&fit=crop";
-const ollieImage = "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop";
+const heroCover = `${import.meta.env.BASE_URL}images/header.png`;
+const principiaImage = `${import.meta.env.BASE_URL}images/Protetor Solar Principia FPS60.png`;
+const isdinImage = `${import.meta.env.BASE_URL}images/Isdin Fusion Water FPS60.png`;
+const bioreImage = `${import.meta.env.BASE_URL}images/Bioré UV Perfect Milk FPS50.png`;
+const lorealImage = `${import.meta.env.BASE_URL}images/L'Oréal Expertise com cor FPS60.png`;
+const ollieImage = `${import.meta.env.BASE_URL}images/Protetor Solar Bastão Ollie FPS95.png`;
 
 const products = [
   {
@@ -17,7 +17,7 @@ const products = [
     price: "R$ 43,35",
     badge: "Muito barato",
     image: principiaImage,
-    whyLove: "Alta proteção com preço amigo, perfeito para entrar na rotina sem pesar no bolso.",
+    whyLove: "✔ Alta proteção (FPS 60)\n✔ Ideal para uso diário",
     color: "bg-[#FFF0E5]",
     shopee: { url: "https://s.shopee.com.br/AADPeFV2oz?share_channel_code=1", price: "R$ 48,59" },
     amazon: { url: "https://amzn.to/4evX0bt", price: "R$ 43,35" },
@@ -27,36 +27,35 @@ const products = [
     id: 2,
     name: "Isdin Fusion Water FPS60",
     description: "Melhor premium para pele oleosa, com acabamento perfeito e toque seco.",
-    price: "R$ 94,91",
+    price: "R$ 79,99",
     badge: "Melhor premium",
     image: isdinImage,
-    whyLove: "Muito usado por dermatologistas, tem absorção rápida e não deixa a pele oleosa.",
+    whyLove: "✔ Não deixa a pele oleosa\n✔ Absorção rápida\n✔ Alta qualidade",
     color: "bg-[#E6F4F1]",
-    shopee: { url: "https://s.shopee.com.br/7VCeYpie3S", price: "R$ 79,99" },
+    shopee: { url: "https://s.shopee.com.br/1Vvc2c0OEa?share_channel_code=1", price: "R$ 79,99" },
     amazon: { url: "https://amzn.to/48bVqrt", price: "R$ 90,15" },
-    ml: { url: "https://meli.la/19raKJx", price: "R$ 116,90" }
+    ml: { url: "https://meli.la/2rZyk8Y", price: "R$ 116,90" }
   },
   {
     id: 3,
     name: "Bioré UV Perfect Milk FPS50",
     description: "Leve, seco e muito popular entre quem quer pele bonita no calor.",
-    price: "R$ 89,90",
+    price: "R$ 72,00",
     badge: "Melhor custo-benefício",
     image: bioreImage,
-    whyLove: "Toque seco, muito leve e ótimo para quem quer proteção sem brilho excessivo.",
+    whyLove: "✔ Toque seco\n✔ Muito leve\n✔ Ótimo para calor",
     color: "bg-[#F3E8FF]",
-    shopee: { url: "https://amzn.to/4mIt3qX", price: "R$ 89,90" },
-    amazon: { url: "https://amzn.to/4mIt3qX", price: "R$ 89,90" },
+    shopee: { url: "https://s.shopee.com.br/6fdiE6IPYE?share_channel_code=1", price: "R$ 72,00" },
     ml: { url: "https://meli.la/1EpoTwK", price: "R$ 72,00" }
   },
   {
     id: 4,
     name: "L'Oréal Expertise com cor FPS60",
     description: "Com base, protege e já uniformiza a pele como maquiagem.",
-    price: "R$ 44,67",
+    price: "R$ 37,90",
     badge: "Com base",
     image: lorealImage,
-    whyLove: "Disfarça manchas, substitui maquiagem e segue entre os mais vendidos.",
+    whyLove: "✔ Disfarça manchas\n✔ Substitui maquiagem\n✔ Muito vendido",
     color: "bg-[#E8F1FF]",
     shopee: { url: "https://s.shopee.com.br/5L8A0T7h9K?share_channel_code=1", price: "R$ 55,00" },
     amazon: { url: "https://amzn.to/42lSKEd", price: "R$ 37,90" },
@@ -66,10 +65,10 @@ const products = [
     id: 5,
     name: "Protetor Solar Bastão Ollie FPS95",
     description: "Formato em stick muito viral, fácil de aplicar e carregar.",
-    price: "R$ 138,97",
-    badge: "Em bastão",
+    price: "R$ 132,05",
+    badge: "Em Bastão",
     image: ollieImage,
-    whyLove: "Não suja a mão, facilita a reaplicação e virou tendência pela praticidade total.",
+    whyLove: "✔ Não suja a mão\n✔ Fácil de reaplicar\n✔ Muito prático no dia a dia",
     color: "bg-[#FFF7E5]",
     shopee: { url: "https://s.shopee.com.br/8pi2BgWB4T?share_channel_code=1", price: "R$ 139,00" },
     amazon: { url: "https://amzn.to/4cYsjul", price: "R$ 138,97" },
@@ -87,7 +86,7 @@ const sticksProducts = [
     whyLove: "Escorrega fácil na pele, não arde os olhos e é ótimo para proteger nariz e ombros na praia.",
     color: "bg-[#FFF8E1]",
     tag: "Praia e Esporte",
-    image: "/images/stick-1.png",
+    image: `${import.meta.env.BASE_URL}images/stick-1.png`,
     shopee: { url: "https://shopee.com.br/search?keyword=Banana+Boat+Sport+FPS+50+bastao", price: "R$ 27" },
     ml: { url: "https://lista.mercadolivre.com.br/Banana-Boat-Sport-FPS-50-bastao", price: "R$ 32" }
   },
@@ -100,7 +99,7 @@ const sticksProducts = [
     whyLove: "A combinação de cor com proteção FPS 95 é um achado raro. Suaviza manchas de acne e melasma, unifica a pele e protege de verdade — sem precisar de maquiagem por cima.",
     color: "bg-[#FDE8D8]",
     tag: "Rosto e Pele",
-    image: "/images/stick-2.webp",
+    image: `${import.meta.env.BASE_URL}images/stick-2.webp`,
     shopee: { url: "https://shopee.com.br/Ollie-Protetor-Solar-em-Bast%C3%A3o-Com-Cor-FPS-95-i.1423440087.19598142136?extraParams=%7B%22display_model_id%22%3A199174375405%2C%22model_selection_logic%22%3A3%7D&sp_atk=71900e9b-1c45-4e65-b857-bd1f65e076be&xptdk=71900e9b-1c45-4e65-b857-bd1f65e076be", price: "R$ 132,05" },
     ml: { url: "https://www.mercadolivre.com.br/ollie-bastao-protetor-solar-facial-fps-95-cor-cor20/up/MLBU2459614614", price: "R$ 139" }
   },
@@ -170,38 +169,20 @@ export default function Home() {
       {/* Header/Nav */}
       <header className="border-b border-border bg-white/50 backdrop-blur-md sticky top-0 z-50">
         <div className="container mx-auto px-4 h-16 flex items-center justify-center">
-          <span className="font-serif font-bold text-xl tracking-tight text-primary">Achadinhos da Samanta e do Jovani</span>
+          <span className="font-serif font-bold text-xl tracking-tight text-primary">Mimos & Achadinhos da Sam</span>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden bg-muted">
+      <section className="relative w-full h-[500px] md:h-[600px] bg-gradient-to-br from-[#F5E6D3] via-[#F8EDE2] to-[#FAF1E6]">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroCover} 
-            alt="Achadinhos da Samanta e do Jovani" 
-            className="w-full h-full object-cover opacity-75"
+            alt="Mimos & Achadinhos da Sam" 
+            className="w-full h-full object-contain"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
         </div>
-        
-        <div className="relative z-10 container mx-auto px-4 pt-32 pb-24 md:pt-48 md:pb-32 max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <Badge variant="secondary" className="mb-6 px-4 py-1 text-sm font-medium tracking-wide uppercase bg-secondary text-secondary-foreground border-none">
-              Editorial Beauty
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-8 text-balance">
-              Os 5 Melhores Protetores do Momento
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              O sol brasileiro não perdoa. Para manter a pele saudável, jovem e radiante, fomos em busca das fórmulas mais avançadas, elegantes e eficazes do mercado.
-            </p>
-          </motion.div>
-        </div>
+        <div className="relative z-10 container mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24" />
       </section>
 
       {/* Editorial Intro */}
@@ -241,6 +222,11 @@ export default function Home() {
                         </Badge>
                         <span className="text-5xl font-serif font-black opacity-10 leading-none">0{index + 1}</span>
                       </div>
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-auto object-contain rounded-lg mb-4"
+                      />
                       <h2 className="text-2xl md:text-3xl font-serif font-bold text-foreground leading-tight mb-3 text-balance">
                         {product.name}
                       </h2>
@@ -251,16 +237,18 @@ export default function Home() {
                         {product.whyLove}
                       </div>
                       <div className="space-y-2">
-                        <a
-                          href={product.shopee.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#EE4D2D] text-white text-sm font-semibold hover:bg-[#d93d1f] transition-colors duration-200"
-                          data-testid={`link-shopee-${product.id}`}
-                        >
-                          <span>Shopee</span>
-                          <span className="text-white/90 font-bold">{product.shopee.price}</span>
-                        </a>
+                        {product.shopee && (
+                          <a
+                            href={product.shopee.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#EE4D2D] text-white text-sm font-semibold hover:bg-[#d93d1f] transition-colors duration-200"
+                            data-testid={`link-shopee-${product.id}`}
+                          >
+                            <span>Shopee</span>
+                            <span className="text-white/90 text-xs">Clique para visualizar</span>
+                          </a>
+                        )}
                         <a
                           href={product.ml.url}
                           target="_blank"
@@ -269,18 +257,20 @@ export default function Home() {
                           data-testid={`link-ml-${product.id}`}
                         >
                           <span>Mercado Livre</span>
-                          <span className="font-bold">{product.ml.price}</span>
+                          <span className="text-xs">Clique para visualizar</span>
                         </a>
-                        <a
-                          href={product.amazon.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#000000] text-white text-sm font-semibold hover:bg-[#1a1a1a] transition-colors duration-200"
-                          data-testid={`link-amazon-${product.id}`}
-                        >
-                          <span>Amazon</span>
-                          <span className="text-white/90 font-bold">{product.amazon.price}</span>
-                        </a>
+                        {product.amazon && (
+                          <a
+                            href={product.amazon.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between gap-2 rounded-xl px-4 py-3 bg-[#000000] text-white text-sm font-semibold hover:bg-[#1a1a1a] transition-colors duration-200"
+                            data-testid={`link-amazon-${product.id}`}
+                          >
+                            <span>Amazon</span>
+                            <span className="text-white/90 text-xs">Clique para visualizar</span>
+                          </a>
+                        )}
                       </div>
                     </div>
                   </CardContent>
@@ -322,12 +312,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-background py-12 border-t border-border">
         <div className="container mx-auto px-4 text-center">
-          <span className="font-serif font-bold text-xl text-primary mb-4 block">Achadinhos da Samanta e do Jovani</span>
           <p className="text-sm text-muted-foreground max-w-md mx-auto mb-6">
             Editorial independente. Os preços mencionados são médias de mercado e podem variar. Consulte sempre um dermatologista para recomendações personalizadas.
           </p>
           <div className="text-xs text-stone-400">
-            &copy; {new Date().getFullYear()} Achadinhos da Samanta e do Jovani. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} Mimos & Achadinhos da Sam. Todos os direitos reservados.
           </div>
         </div>
       </footer>
